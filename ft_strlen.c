@@ -1,20 +1,28 @@
-int	ft_strlen(char *str)
-{
-	int	i;
+#include <stdio.h>
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
-/*
-int main(void)
+size_t ft_strlen(const char *s)
 {
-    char string[] = "Hola";
-    printf("%s \n", string);
-    int length = ft_strlen(string);
-    printf("%d", length);
+    int i = 0;
+   // int count = 0; 
+    while(s[i]!='\0')
+    {
+        i++;
+    }
+    return i;
 }
-*/
+
+
+
+
+#include <string.h>
+
+int main() {
+    char str[] = "Hola, mundo!";
+    size_t len = strlen(str);
+    size_t len2 = ft_strlen(str);
+
+    printf("strlen: La longitud de la cadena es: %zu\n", len);
+
+    printf("ft_strlen: La longitud de la cadena con es: %zu\n", len2);
+    return 0;
+}
