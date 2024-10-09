@@ -15,7 +15,7 @@ size_t ft_strlen(const char *s)
 
 
 #include <string.h>
-
+/*
 int main() {
     char str[] = "Hola, mundo!";
     size_t len = strlen(str);
@@ -26,3 +26,4 @@ int main() {
     printf("ft_strlen: La longitud de la cadena con es: %zu\n", len2);
     return 0;
 }
+*/
