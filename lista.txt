@@ -8,15 +8,15 @@
         • isprint
         • strrchr
         • strlen
-• strncmp
+        • strncmp
         • memset
         • bzero
 • memchr
         • memcpy
 • memcmp
 • memmove
-• strnstr
-• strlcpy
+        • strnstr
+        • strlcpy
 • strlcat
         • atoi
 
