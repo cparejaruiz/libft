@@ -1,1 +1,22 @@
-# libft
+## Descripción de funciones
+
+- **`atoi`**: Convierte una cadena de caracteres en un número entero.
+- **`bzero`**: Establece los primeros `n` bytes de una zona de memoria a cero.
+- **`isalnum`**: Verifica si un carácter es una letra o un número.
+- **`isalpha`**: Verifica si un carácter es una letra (a-z o A-Z).
+- **`isascii`**: Verifica si un carácter pertenece al conjunto ASCII (0-127).
+- **`isdigit`**: Verifica si un carácter es un dígito (0-9).
+- **`isprint`**: Verifica si un carácter es imprimible (incluye espacio).
+- **`memchr`**: Busca un valor específico dentro de un bloque de memoria.
+- **`memcmp`**: Compara dos bloques de memoria byte a byte.
+- **`memcpy`**: Copia un bloque de memoria de origen a destino (no seguro para solapamiento).
+- **`memmove`**: Copia un bloque de memoria, asegurando seguridad en caso de solapamiento.
+- **`memset`**: Rellena un bloque de memoria con un valor específico.
+- **`strchr`**: Busca la primera aparición de un carácter en una cadena.
+- **`strlcat`**: Concatena una cadena a otra, asegurando no sobrescribir el tamaño del destino.
+- **`strlcpy`**: Copia una cadena a otra, asegurando no sobrescribir el tamaño del destino.
+- **`strlen`**: Calcula la longitud de una cadena (sin incluir el carácter nulo).
+- **`strnstr`**: Busca la primera aparición de una subcadena en otra cadena, dentro de un límite de longitud.
+- **`strncmp`**: Compara dos cadenas hasta los primeros `n` caracteres.
+- **`strrchr`**: Busca la última aparición de un carácter en una cadena.
+- **`tolower`**: Convierte un carácter a minúscula (si es una letra mayúscula).
