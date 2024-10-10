@@ -13,8 +13,8 @@
         • bzero
 • memchr
         • memcpy
-• memcmp
-• memmove
+        • memcmp
+        • memmove
         • strnstr
         • strlcpy
 • strlcat
