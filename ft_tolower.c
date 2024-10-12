@@ -1,6 +1,5 @@
-#include <stdio.h>
-#include <ctype.h>
-#include <unistd.h>
+#include "libft.h"
+
 
 int    ft_toupper(int ch)
 {
