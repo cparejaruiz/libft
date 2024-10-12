@@ -11,19 +11,19 @@
         • strncmp
         • memset
         • bzero
-• memchr
+        • memchr
         • memcpy
         • memcmp
         • memmove
         • strnstr
         • strlcpy
-• strlcat
+        • strlcat
         • atoi
-
-
+calloc
+        strdup
 
 ft_substr
-ft_strjoin
+        ft_strjoin
 ft_strtrim
 ft_split
 ft_itoa
@@ -32,7 +32,7 @@ ft_striteri
         ft_putchar_fd
         ft_putstr_fd
         ft_putendl_fd
-ft_putnbr_fd
+        ft_putnbr_fd
 
 
 bonus:
