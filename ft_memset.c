@@ -10,7 +10,7 @@ void *ft_memset(void *str, int c, size_t n)
     return str; // Devolver el puntero original
 }
 
-
+/*
 int main(void)
 {
    char str[] = "Hola, mundo";
@@ -24,8 +24,5 @@ int main(void)
 
     ft_memset(str2, '*', 5);
     printf("Después de ft_memset: %s\n", str2);
-
-
-
 }
- 
+*/ 
