@@ -1,23 +1,20 @@
 #include "libft.h"
 
-char*    ft_strchr(char *str, int c)
+char				*ft_strchr(const char *s, int c)
 {
-    while (*str != '\0')
+    while (*s != '\0')
     {
-        if (*str != c)
+        if (*s != c)
             {
-                str++;
+                s++;
             }
-        else
-            {
-               return str;
-            }
+        
     }
     
-    if (*str == '\0' && *str != c)
-    {
-        return NULL;
-    }     
+    if (c == '\0')  
+        return (char *)s;
+
+    return NULL;
     
 }
 

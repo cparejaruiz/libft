@@ -12,7 +12,7 @@ void *ft_memchr(const void *s, int c, size_t n) {
     }
     return NULL;  
 }
-
+/*
 int main(void) {
     char data[] = {1, 2, 3, 4, 5, 6};
     int target = 4;
@@ -38,3 +38,4 @@ int main(void) {
 
     return 0;
 }
+*/

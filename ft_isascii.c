@@ -1,42 +1,24 @@
-#include <stdio.h>
-#include <ctype.h>
+#include "libft.h"
 
-int    ft_isascii(char* str)
+int ft_isascii(int c)
 {
-    if (*str >= 0 && *str <= 127)
+    if (c >= 0 && c <= 127)
     {
         return 1;
     }
-    else
-    {
-        return 0;
-    }
+    return 0;
 }
 
-
+/*
 int main(void)
 {
-/*
 
-    char c;
-
-    printf("Enter a character: ");
-    scanf("%c", &c);
-
-    if (isascii(c) == 0)
-         printf("%c is not an digit.", c);
+    char *str = "Hello!";
+    if (ft_isascii(str))
+        printf("All characters are ASCII\n");
     else
-         printf("%c is  an digit.", c);
-
-    return 0;
-    */
-
-
-    char c[] = "ÿ";
-    if (ft_isascii(c) == 0)
-         printf("%s is not ascii.", c);
-    else
-         printf("%s is ascii.", c);
+        printf("Some characters are not ASCII\n");
 
     return 0;
     }
+*/

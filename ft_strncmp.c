@@ -1,39 +1,45 @@
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-int ft_strncmp(const char *str1, const char *str2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-    int i = 0;
-    while (i < n - 1 && str1[i] != '\0' && str2[i] != '\0' )
-    {
-        if(str1[i]==str2[i])
-        {
-            i++;
-        }
-    }
-   return i;
+       size_t i = 0;
 
+    if (n == 0)
+        return (0);   
+
+    while (i < n && s1[i] != '\0' && s2[i] != '\0')  
+        {
+        if (s1[i] != s2[i])  
+            return ((unsigned char)s1[i] - (unsigned char)s2[i]);  
+            i++;
+    }
+
+    if (i < n && (s1[i] != '\0' || s2[i] != '\0'))   
+            return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+
+    return (0);  
 }
 
 
 
+
 int main() {
-    char str1[] = "Holanda";
-    char str2[] = "Holandas";
-    int chain = sizeof(str1);
-    int result = strncmp(str1, str2, chain);
-    int result2 = ft_strncmp(str1, str2, chain);
+    char s1[] = "Holanda";
+    char s2[] = "Holandas";
+    int chain = sizeof(s1);
+    int result = strncmp(s1, s2, chain);
+    int result2 = ft_strncmp(s1, s2, chain);
 
 
     if (result == 0 ||result2 == 0) {
         printf("strncmp: Las cadenas son iguales hasta los primeros %d caracteres.\n", chain);
         printf("ft_strncmp: Las cadenas son iguales hasta los primeros %d caracteres.\n", chain);
     } else if (result < 0 || result2 < 0) {
-        printf("strncmp: La cadena str1 es menor que str2.\n");
-        printf("ft_strncmp: La cadena str1 es menor que str2.\n");
+        printf("strncmp: La cadena s1 es menor que s2.\n");
+        printf("ft_strncmp: La cadena s1 es menor que s2.\n");
     } else {
-        printf("strncmp: La cadena str1 es mayor que str2.\n");
-        printf("ft_strncmp: La cadena str1 es mayor que str2.\n");
+        printf("strncmp: La cadena s1 es mayor que s2.\n");
+        printf("ft_strncmp: La cadena s1 es mayor que s2.\n");
     }
 
     return 0;

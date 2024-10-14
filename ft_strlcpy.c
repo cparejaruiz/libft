@@ -3,15 +3,20 @@
 
 size_t ft_strlcpy(char *dst, const char *src, size_t dstsize) {
 
-    int i = 0;
+    size_t i = 0;
+    if (dstsize == 0)  
+        return (ft_strlen(src));
+
     while (i < dstsize - 1 && src[i] != '\0')
     {
         dst[i] = src[i];
         i++;
     }
-
+    	dst[i]= '\0';
+	return (ft_strlen(src));
 }
 
+/*
 int main() {
     char src[] = "Hola, mundo!";
     char dst[20];
@@ -24,3 +29,4 @@ int main() {
 
     return 0;
 }
+*/

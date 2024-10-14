@@ -1,9 +1,8 @@
-#include <stdio.h>
-#include <ctype.h>
+#include "libft.h"
 
-int    ft_isdigit(char* str)
+int    ft_isdigit(int c)
 {
-    if (*str >= '0' && *str <= '9')
+    if (c >= '0' && c <= '9')
     {
         return 1;
     }
@@ -13,25 +12,9 @@ int    ft_isdigit(char* str)
     }
 }
 
-
+/*
 int main(void)
 {
-/*
-
-    char c;
-
-    printf("Enter a character: ");
-    scanf("%c", &c);
-
-    if (isdigit(c) == 0)
-         printf("%c is not an digit.", c);
-    else
-         printf("%c is  an digit.", c);
-
-    return 0;
-    */
-
-
     char c[] = "0";
     if (ft_isdigit(c) == 0)
          printf("%s is not an digit.", c);
@@ -40,3 +23,4 @@ int main(void)
 
     return 0;
     }
+*/

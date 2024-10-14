@@ -1,29 +1,34 @@
 #include "libft.h"
 
-char *ft_strnstr(const char *big, const char *little, size_t len) {
+char *ft_strnstr(const char *str, const char *to_find, size_t len) {
     size_t i = 0;
     size_t j;
 
-    if (*little == '\0') {
-        return (char *)big;  
+    if (!str && len == 0) {
+        return NULL;
     }
 
-    while (i < len && big[i] != '\0')
-    {
-        if (big[i] == little[0]) {
+    if (*to_find == '\0') {
+        return (char *)str;
+    }
+
+    while (i < len && str[i] != '\0') {
+        if (str[i] == to_find[0]) {
             j = 0;
-            while (i + j < len && big[i + j] == little[j] && little[j] != '\0') {
+            while (i + j < len && str[i + j] == to_find[j] && to_find[j] != '\0') {
                 j++;
             }
-            if (little[j] == '\0') {
-                return (char *)&big[i];  // Subcadena encontrada
+            if (to_find[j] == '\0') {
+                return (char *)&str[i];
             }
         }
         i++;
     }
-    return NULL;  // No se encontró la subcadena
+
+    return NULL;
 }
 
+/*
 int main() {
     const char *largestring = "Foo Bar Baz Uuu";
     const char *smallstring = "Baz";
@@ -39,3 +44,4 @@ int main() {
 
     return 0;
 }
+*/

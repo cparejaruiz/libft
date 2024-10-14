@@ -1,19 +1,23 @@
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 
 void *ft_memcpy(void *dest, const void *src, size_t n)
 {
-    unsigned char *ptrdest = dest;
-    unsigned char const *ptrsrc = src;
+    if (dest == NULL || src == NULL)
+        return NULL;
+
+    unsigned char *ptrdest = (unsigned char *)dest;
+    const unsigned char *ptrsrc = (const unsigned char *)src;
+
     while (n--)
     {
-        *ptrdest = *ptrsrc;
-        *ptrdest++;
+        *ptrdest++ = *ptrsrc++;  
     }
-    return ptrdest;
+
+    return dest;
 }
 
+/*
 int main() {
     int source[5] = {1, 2, 3, 4, 5};
     int destination[5];
@@ -40,3 +44,4 @@ int main() {
     
     return 0;
 }
+*/

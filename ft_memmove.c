@@ -2,19 +2,33 @@
 
 void *ft_memmove(void *dest, const void *src, size_t n)
 {
-    const unsigned char *p_src = (const unsigned char *)src;
-    unsigned char *p_dest = (unsigned char *)dest;
+    unsigned char *d = (unsigned char *)dest;
+    const unsigned char *s = (const unsigned char *)src;
 
-    int i = 0;
-    while (i < n)
+    if (!dest && !src)
+        return NULL;
+
+    if (d > s)
     {
-        p_dest[i] = p_src[i];
-        dest++;
-        src++;
+        d += n;
+        s += n;
+        while (n--)
+        {
+            *(--d) = *(--s);
+        }
     }
+    else
+    {
+        while (n--)
+        {
+            *d++ = *s++;
+        }
+    }
+
+    return dest;
 }
 
-
+/*
 int main() {
     char src[] = "Hello, World!";
     char dest[20];
@@ -32,3 +46,4 @@ int main() {
     
     return 0;
 }
+*/

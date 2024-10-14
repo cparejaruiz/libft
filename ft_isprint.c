@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <ctype.h>
 
-int    ft_isprint(char* str)
+int    ft_isprint(int c)
 {
-    if (*str >= 32 && *str <= 126)
+    if (c >= 32 && c <= 126)
     {
         return 1;
     }
@@ -13,11 +13,9 @@ int    ft_isprint(char* str)
     }
 }
 
-
+/*
 int main(void)
 {
-/*
-
     char c;
 
     printf("Enter a character: ");
@@ -29,14 +27,6 @@ int main(void)
          printf("%c is printable.", c);
 
     return 0;
-    */
 
-
-    char c[] = "	";
-    if (ft_isprint(c) == 0)
-         printf("%s is not printable.", c);
-    else
-         printf("%s is printable.", c);
-
-    return 0;
     }
+    */

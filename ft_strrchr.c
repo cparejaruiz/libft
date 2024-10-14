@@ -1,27 +1,27 @@
 #include "libft.h"
 
-char *ft_strrchr(const char *str, int c)
+char *ft_strrchr(const char *s, int c)
 {
-    while (*str == '\0')
+    const char *last_occurrence = NULL;   
+
+    while (*s != '\0')
     {
-        if (*str != c)
-            {
-                str--;
-            }
-        else
-            {
-            return (char *)str;
-            }
+        if (*s == (char)c)
+        {
+            last_occurrence = s;  // Si encontramos el carácter, actualizamos la última ocurrencia
+        }
+        s++;
     }
-    
-    if (*str == '\0' && *str != c)
+
+    if (c == '\0')
     {
-        return NULL;
-    }     
-    
+        return (char *)s;
+    }
+
+    return (char *)last_occurrence;
 }
 
-
+/*
 int main(void)
 {
 
@@ -30,7 +30,7 @@ int main(void)
     char *resultado;
 
     // Buscar la última aparición del carácter 'o'
-    resultado = strrchr(cadena, caracter);
+    resultado = srchr(cadena, caracter);
 
     if (resultado != NULL) {
         printf("La última aparición de '%c' está en la posición: %ld\n", caracter, resultado - cadena);
@@ -45,7 +45,7 @@ int main(void)
     char *resultado2;
 
     // Buscar la última aparición del carácter 'o'
-    resultado2 = ft_strrchr(cadena2, caracter2);
+    resultado2 = ft_srchr(cadena2, caracter2);
 
     if (resultado != NULL) {
         printf("La última aparición de '%c' está en la posición: %ld\n", caracter2, resultado2 - cadena2);
@@ -55,3 +55,4 @@ int main(void)
 
     return 0;
     }
+    */

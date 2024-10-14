@@ -1,13 +1,12 @@
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
  
 void *ft_memset(void *str, int c, size_t n)
 {
-    unsigned char *ptr = str; // Convertir a puntero de tipo unsigned char
-    while (n--) { // Iterar n veces
-        *ptr++ = (unsigned char)c; // Asignar el valor c y mover el puntero
+    unsigned char *ptr = str; 
+    while (n--) { 
+        *ptr++ = (unsigned char)c; 
     }
-    return str; // Devolver el puntero original
+    return str; 
 }
 
 /*
