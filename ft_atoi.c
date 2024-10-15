@@ -1,5 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: carmen <carmen@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/15 23:26:32 by carmen            #+#    #+#             */
+/*   Updated: 2024/10/15 23:27:26 by carmen           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <stdio.h> 
+#include "libft.h"
 
 int	ft_atoi(char *str)
 {
@@ -27,7 +38,7 @@ int	ft_atoi(char *str)
 	}
 	return (i * sign);
 }
-
+/*
 int	main(void)
 {
 	int	numero;
@@ -35,3 +46,4 @@ int	main(void)
 	numero = ft_atoi("---+--+1234ab567");
 	printf("numero: %d \n", numero);
 }
+*/
