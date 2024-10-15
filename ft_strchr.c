@@ -4,10 +4,12 @@ char				*ft_strchr(const char *s, int c)
 {
     while (*s != '\0')
     {
-        if (*s != c)
+        if (*s == c)
             {
-                s++;
+                return (char *)s;
+                
             }
+        s++;
         
     }
     
@@ -27,6 +29,8 @@ int main(void)
     char *result;
 
     result = ft_strchr(string, ch);
+        printf("result %s\n", result);
+
 
     if (result != NULL) {
         printf("La letra '%c' se encuentra en la posición: %ld\n", ch, result - string);
