@@ -1,34 +1,47 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: carmen <carmen@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/15 23:56:48 by carmen            #+#    #+#             */
+/*   Updated: 2024/10/16 00:02:21 by carmen           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-    int len=1;
-    int m  = n;
+	int	len;
+	int	m;
 
-    while (m >= 10 || m <= -10)
-    {
-        m = m/10;
-        len++;
-    }
+	len = 1;
+	m = n;
 
-    if (n < 0) {
-        len++;
-    }
+	while (m >= 10 || m <= -10)
+	{
+		m = m / 10;
+		len++;
+	}
+	if (n < 0) 
+		len++;
 
-    char *num = malloc((len+1) * sizeof(char));
+	char *num = malloc((len + 1) * sizeof(char));
 
-    if(num ==NULL)
-    return NULL;
-    num[len] = '\0';
+	if (num == NULL)
+		return (NULL);
+	num[len] = '\0';
 
-    while (n >= 10 )
-    {
-        num[len-1] = (n % 10) + '0';
-        len--;  
-        n = n / 10;
-    }
-        num[len - 1] = (n % 10) + '0';
-return num;
+	while (n >= 10)
+	{
+		num[len -1] = (n % 10) + '0';
+		len --;
+		n = n / 10;
+	}
+	num[len - 1] = (n % 10) + '0';
+	return (num);
 }
 
 /*
