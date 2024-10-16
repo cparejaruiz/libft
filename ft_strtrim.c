@@ -6,7 +6,7 @@
 /*   By: carmen <carmen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 11:48:00 by carmen            #+#    #+#             */
-/*   Updated: 2024/10/16 11:51:38 by carmen           ###   ########.fr       */
+/*   Updated: 2024/10/16 12:40:51 by carmen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,18 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	i;
-	size_t	j;
-	size_t	k;
-	char	*str;
+	size_t	start;
+	size_t	end;
 
-	i = 0;
-	j = 0;
-	k = 0;
 	if (!s1 || !set)
 		return (NULL);
-	while (s1[i] && ft_strchr(set, s1[i]))
-		i++;
-	if (s1[i] == '\0')
-		return (ft_strdup(""));
-	j = ft_strlen(s1) - 1;
-	while (j > i && ft_strchr(set, s1[j]))
-		j--;
-	str = (char *)malloc((j - i + 2) * sizeof(char));
-	if (!str)
-		return (NULL);
-	while (i <= j)
-	{
-		str[k++] = s1[i++];
-	}
-	str[k] = '\0';
-	return (str);
+	start = 0;
+	end = ft_strlen(s1);
+	while (s1[start] && ft_strchr(set, s1[start]))
+		start++;
+	while (end > start && ft_strchr(set, s1[end - 1]))
+		end--;
+	return (ft_substr(s1, start, end - start));
 }
 
 /*
