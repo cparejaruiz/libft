@@ -6,7 +6,7 @@
 /*   By: carmen <carmen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 11:51:54 by carmen            #+#    #+#             */
-/*   Updated: 2024/10/16 12:25:36 by carmen           ###   ########.fr       */
+/*   Updated: 2024/10/16 23:14:01 by carmen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 				return ((char *) &str[i]);
 			i++;
 		}
-		return (NULL);
 	}
+return (NULL);
 }
 
 /*
