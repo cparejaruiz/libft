@@ -6,7 +6,7 @@
 /*   By: carmen <carmen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 23:21:59 by carmen            #+#    #+#             */
-/*   Updated: 2024/10/16 23:25:27 by carmen           ###   ########.fr       */
+/*   Updated: 2024/10/17 12:01:06 by carmen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,35 +14,24 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int i;
-	int j;
-	
-	i = 0;
-	j = 0;
-	while (s1[i] != '\0') i++;
-	while (s2[j] != '\0') j++;
+	int		len1;
+	int		len2;
+	int		total_len;
+	char	*str;
+	int		i;
 
-	int len = i + j;
-	char *str = (char *) malloc((len +1) * sizeof(char));
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	total_len = len1 + len2;
+
+	str = (char *)malloc((total_len + 1) * sizeof(char));
 	if (str == NULL)
-		return NULL; 
+		return (NULL);
 	i = 0;
-	while (s1[i] != '\0')
-	{
-		str[i]=s1[i];
-		i++;
-	}
-
-		j = 0;
-
-		while (s2[j]!='\0')
-		{
-			str[i]=s2[j];
-			j++;   
-			i++;
-		}
-		str[i] = '\0';
-	return str;
+	ft_strcpy(str, s1, &i);
+	ft_strcpy(str, s2, &i);
+	str[i] = '\0';
+	return (str);
 }
 
 /*
