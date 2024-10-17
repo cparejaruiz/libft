@@ -6,7 +6,7 @@
 /*   By: carmen <carmen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 10:22:35 by carmen            #+#    #+#             */
-/*   Updated: 2024/10/16 10:25:19 by carmen           ###   ########.fr       */
+/*   Updated: 2024/10/17 23:01:31 by carmen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,14 @@ void	ft_putnbr_fd(int n, int fd)
 	if (n == 0)
 	{
 		write(fd, "0", 1);
+		return;
 	}
 	else if (n == -2147483648)
 	{
 		write(fd, "-2147483648", 11);
+		return;
 	}
+	
 	else if (n < 0)
 	{
 		write(fd, "-", 1);
@@ -34,10 +37,9 @@ void	ft_putnbr_fd(int n, int fd)
 	num = n % 10 + '0';
 	write(fd, &num, 1);
 }
-
 /*
 int main(void) {
-    ft_putnbr_fd(12, 1);  
+    ft_putnbr_fd(2147483648, 2);  
 
     return 0;
 }*/
