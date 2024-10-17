@@ -6,20 +6,17 @@
 /*   By: carmen <carmen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 12:16:22 by carmen            #+#    #+#             */
-/*   Updated: 2024/10/17 12:17:46 by carmen           ###   ########.fr       */
+/*   Updated: 2024/10/17 13:01:27 by carmen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
 void	*ft_calloc(size_t num, size_t size)
 {
-
-	void*	ptr;
+	void	*ptr;
 
 	ptr = malloc(num * size);
-
 	if (ptr == NULL )
 		return (NULL);
 	ft_memset(ptr, 0, num * size);

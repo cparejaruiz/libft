@@ -6,7 +6,7 @@
 /*   By: carmen <carmen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 23:21:59 by carmen            #+#    #+#             */
-/*   Updated: 2024/10/17 12:01:06 by carmen           ###   ########.fr       */
+/*   Updated: 2024/10/17 13:03:34 by carmen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,12 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	len1 = ft_strlen(s1);
 	len2 = ft_strlen(s2);
 	total_len = len1 + len2;
-
 	str = (char *)malloc((total_len + 1) * sizeof(char));
 	if (str == NULL)
 		return (NULL);
 	i = 0;
-	ft_strcpy(str, s1, &i);
-	ft_strcpy(str, s2, &i);
+	ft_strlcpy(str, s1, i);
+	ft_strlcpy(str, s2, i);
 	str[i] = '\0';
 	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: carmen <carmen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 23:16:35 by carmen            #+#    #+#             */
-/*   Updated: 2024/10/16 23:19:48 by carmen           ###   ########.fr       */
+/*   Updated: 2024/10/17 13:04:30 by carmen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,18 @@
 
 size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
 {
-	int	i; 
-	int	j;
+	size_t	i;
+	size_t	j;
 
 	j = 0;
 	i = 0;
 	while (dest[j] != '\0')
 		j++;
-
 	while (i < dstsize - 1 && src[i] != '\0')
 	{
 		dest[j + 1] = src[i];
 		i++;
 	}
-
 	dest[j + i] = '\0';
 	return (i + j);
 }

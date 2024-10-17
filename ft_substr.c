@@ -6,7 +6,7 @@
 /*   By: carmen <carmen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 21:21:54 by carmen            #+#    #+#             */
-/*   Updated: 2024/10/16 12:15:33 by carmen           ###   ########.fr       */
+/*   Updated: 2024/10/17 13:02:03 by carmen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int		i;
-	int		j;
-	int		slen ;
-	char	*string;
+	size_t		i;
+	size_t		j;
+	size_t		slen ;
+	char		*string;
 
 	i = 0;
 	j = 0;
