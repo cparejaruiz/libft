@@ -6,7 +6,7 @@
 /*   By: carmen <carmen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 10:07:44 by carmen            #+#    #+#             */
-/*   Updated: 2024/10/16 10:13:56 by carmen           ###   ########.fr       */
+/*   Updated: 2024/10/19 18:37:15 by carmen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,29 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	unsigned char		*ptrdest;
-	const unsigned char	*ptrsrc;
+	unsigned char *ptrdest;
+    const unsigned char *ptrsrc;
+    size_t i;
 
-	if (dest == NULL || src == NULL)
-		return (NULL);
-	ptrdest = (unsigned char *)dest;
-	ptrsrc = (const unsigned char *)src;
-	while (n--)
+    if (!dest && !src) 
+        return NULL;
+    ptrdest = (unsigned char *)dest;
+    ptrsrc = (const unsigned char *)src;
+    i = 0;
+	while (i<n)
 	{
-		*ptrdest++ = *ptrsrc++;
+		ptrdest[i]=ptrsrc[i];
+        i++;
 	}
 	return (dest);
 }
 
 /*
 int main() {
-    int source[5] = {1, 2, 3, 4, 5};
-    int destination[5];
+char source[] = "a1-@;'(g#:j/l0] !uy9Be*BY ";
+    int destination[50];
     
-    memcpy(destination, source, sizeof(int) * 5);
+    memcpy(destination, source, sizeof(char) * 27);
     
     printf("memcpy es ");
 
@@ -41,13 +44,14 @@ int main() {
         printf("%d ", destination[i]);
     }
     printf("\n");
-
-    int source2[5] = {6,7,8,9,10};
-    int destination2[5];
     
-    memcpy(destination2, source2, sizeof(int) * 5);
+char source2[] = "a1-@;'(g#:j/l0] !uy9Be*BY ";
+
+    int destination2[50];
+    
+    memcpy(destination2, source2 ,sizeof(char) * 27);
     printf("ft_memcpy es ");
-    for(int i = 0; i < 5; i++) {
+    for(int i = 0; i < 27; i++) {
         printf("%d ", destination2[i]);
     }
     printf("\n");
