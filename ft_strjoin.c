@@ -6,11 +6,33 @@
 /*   By: carmen <carmen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 23:21:59 by carmen            #+#    #+#             */
-/*   Updated: 2024/10/17 13:03:34 by carmen           ###   ########.fr       */
+/*   Updated: 2024/10/19 22:10:01 by carmen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static char	*ft_aux(char const *s1, char const *s2, char *str)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (s1[i] != '\0')
+	{
+		str[i] = s1[i];
+		i++;
+	}
+	j = 0;
+	while (s2[j] != '\0')
+	{
+		str[i] = s2[j];
+		i++;
+		j++;
+	}
+	str[i] = '\0';
+	return (str);
+}
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -18,7 +40,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		len2;
 	int		total_len;
 	char	*str;
-	int		i;
 
 	len1 = ft_strlen(s1);
 	len2 = ft_strlen(s2);
@@ -26,11 +47,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	str = (char *)malloc((total_len + 1) * sizeof(char));
 	if (str == NULL)
 		return (NULL);
-	i = 0;
-	ft_strlcpy(str, s1, i);
-	ft_strlcpy(str, s2, i);
-	str[i] = '\0';
-	return (str);
+	return (ft_aux(s1, s2, str));
 }
 
 /*
@@ -69,4 +86,5 @@ int main(void) {
     }
 
     return 0;
-}*/
+}
+*/
