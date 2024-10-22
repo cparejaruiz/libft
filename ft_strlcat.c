@@ -6,7 +6,7 @@
 /*   By: carmen <carmen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 23:16:35 by carmen            #+#    #+#             */
-/*   Updated: 2024/10/17 13:04:30 by carmen           ###   ########.fr       */
+/*   Updated: 2024/10/22 20:06:30 by carmen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,30 +15,38 @@
 size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
 {
 	size_t	i;
-	size_t	j;
+	size_t	size_dest;
+	size_t	src_len;
 
-	j = 0;
 	i = 0;
-	while (dest[j] != '\0')
-		j++;
-	while (i < dstsize - 1 && src[i] != '\0')
+	size_dest = ft_strlen(dest);
+	src_len = ft_strlen(src);
+	if (dstsize == 0)
+		return (dstsize + src_len);
+	if (dstsize <= size_dest)
+		return (dstsize + src_len);
+	while (i + size_dest < dstsize - 1 && src[i] != '\0')
 	{
-		dest[j + 1] = src[i];
+		dest[size_dest + i] = src[i];
 		i++;
 	}
-	dest[j + i] = '\0';
-	return (i + j);
+	if (size_dest + i < dstsize)
+		dest[size_dest + i] = '\0';
+	return (size_dest + src_len);
 }
-
 /*
 int main(void) {
     char dest1[20] = "Hola, ";
-    const char *src1 = "mundo!";
-    size_t size1 = 20;
+    printf("Número de caracteres en dest1: %zu\n", strlen(dest1));
+    const char *src1 = "tu";
+    size_t size1 = 0;
 
     printf("Antes de ft_strlcat: %s\n", dest1);
     ft_strlcat(dest1, src1, size1);
     printf("Después de ft_strlcat: %s\n", dest1);
+
+    printf("---------------------- \n");
+
 
     char dest2[20] = "Hola, ";
     const char *src2 = "mundo!";
