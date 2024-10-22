@@ -33,22 +33,27 @@ ft_putstr_fd.c \
 ft_putendl_fd.c \
 ft_putnbr_fd.c
 
+SRCS = $(CFILES)
+OBJS = $(SRCS:.c=.o)
 
-SRCS = $(CFILES)  # Define SRCS correctamente
-OFILES = $(SRCS:.c=.o)
-
-CFLAGS = -Wall	-Wextra 	-Werror
+CFLAGS = -Wall -Wextra -Werror
 
 NAME = libft.a
 
 all: $(NAME)
 
-$(NAME): $(OFILES)
-		ar rcs	$(NAME)	$(OFILES)  # Asegúrate de que esta línea esté indentada con tabulación
+$(NAME): $(OBJS)
+	ar rcs $(NAME) $(OBJS)
 
 clean:
-	@$(RM) $(OBJS)
+	@rm -f $(OBJS)
+
 fclean: clean
 	@rm -f $(NAME)
-re: fclean all //limpiar y recompilar todo
+
+re: fclean all
+
+bonus:
+    # Add bonus compilation steps here if needed
+
 .PHONY: all clean fclean re
