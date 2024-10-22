@@ -6,19 +6,21 @@
 /*   By: carmen <carmen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 15:14:47 by carmen            #+#    #+#             */
-/*   Updated: 2024/10/17 13:12:44 by carmen           ###   ########.fr       */
+/*   Updated: 2024/10/22 22:04:13 by carmen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <stddef.h>
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
-# include <stddef.h>
 # include <ctype.h>
+# include <limits.h>
+# include <stdint.h>
 
 typedef struct s_list
 {
@@ -38,8 +40,8 @@ size_t				ft_strlcpy(char *dest, const char *src, size_t dstsize);
 size_t				ft_strlcat(char *dest, const char *src, size_t dstsize);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
-char				*ft_strnstr(const char *str,
-						const char *to_find, size_t len);
+char				*ft_strnstr(const char *big,
+						const char *little, size_t len);
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 int					ft_atoi(const char *str);

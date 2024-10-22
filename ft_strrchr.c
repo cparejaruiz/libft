@@ -6,7 +6,7 @@
 /*   By: carmen <carmen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 11:55:02 by carmen            #+#    #+#             */
-/*   Updated: 2024/10/16 11:59:10 by carmen           ###   ########.fr       */
+/*   Updated: 2024/10/22 22:03:38 by carmen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,18 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	const char	*last_occurrence;
+	unsigned char	ch;
+	const char		*last_occurrence;
 
+	ch = (unsigned char)c;
+	last_occurrence = NULL;
 	while (*s != '\0')
 	{
-		if (*s == (char)c)
+		if ((unsigned char)*s == ch)
 			last_occurrence = s;
 		s++;
 	}
-	if (c == '\0')
+	if (ch == '\0')
 		return ((char *)s);
 	return ((char *)last_occurrence);
 }
@@ -30,34 +33,41 @@ char	*ft_strrchr(const char *s, int c)
 /*
 int main(void)
 {
-    const char *cadena = "Hola Mundo";
-    char caracter = 'o';
+    const char *cadena = "teste";
+    int caracter = 120;
     char *resultado;
 
-    resultado = strrchr(cadena, caracter);
+    resultado = strrchr
+	(cadena, caracter);
 
     if (resultado != NULL) {
-        printf("strrchr: La última aparición de '%c'
-		 está en la posición: %ld\n", caracter, resultado - cadena);
+        printf("strrchr: 
+		La última aparición de '%c' está en la posición: 
+		%ld\n", caracter, resultado - cadena);
+        printf("strrchr: %s\n",  resultado);
+   
     } else {
-        printf("strrchr: El carácter '%c'
-		 no se encontró en la cadena.\n", caracter);
+        printf("strrchr: El carácter '%c' 
+		no se encontró en la cadena.\n", caracter);
+        printf("strrchr: %s\n",  resultado);
+
     }
 
-    const char *cadena2 = "Hola Mundo";
-    char caracter2 = 'o';
-    char *resultado2;
 
-    resultado2 = ft_strrchr(cadena2, caracter2);
+    char *resultado2 = ft_strrchr(cadena, caracter);
 
     if (resultado != NULL) {
-        printf("ft_strrchr: La última aparición de '%c'
-		 está en la posición: %ld\n", caracter2, resultado2 - cadena2);
+        printf("ft_strrchr: La última aparición de '%c' 
+		está en la posición: %ld\n", caracter, resultado2 - cadena);
+        printf("ft_strrchr: %s\n",  resultado2);
+
     } else {
-        printf("ft_strrchr: El carácter '%c'
-		 no se encontró en la cadena.\n", caracter2);
+        printf("ft_strrchr: El carácter '%c' no se 
+		encontró en la cadena.\n", caracter);
+        printf("ft_strrchr: %s\n",  resultado2);
+
     }
 
     return 0;
     }
-    */
+*/
