@@ -53,7 +53,4 @@ fclean: clean
 
 re: fclean all
 
-bonus:
-    # Add bonus compilation steps here if needed
-
 .PHONY: all clean fclean re
